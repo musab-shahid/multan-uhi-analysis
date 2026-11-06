@@ -38,6 +38,15 @@ The original report provides the exact analytical specifications and results. No
 - The repository currently provides a **PDF code export**, not a clean-running `.ipynb` and not a complete raw-data archive. Full reproduction cannot be claimed from these files alone.
 - The original research report and poster have not been altered for this documentation update.
 
+
+## Reconstructed executable analysis (research portfolio)
+
+- [Colab-ready reconstructed notebook](notebooks/Multan_UHI_Portfolio_Reconstructed.ipynb) — Landsat processing, annual summaries, NDVI–LST regression, exploratory K-Means, and a **new** 2026 relative surface-vulnerability proxy.
+- [Running instructions](docs/REPRODUCING_RECONSTRUCTION.md) and [prior execution verification](docs/RECONSTRUCTED_EXECUTION_VERIFICATION.md).
+- [Researcher-exported derived CSV tables](data/reconstructed/) — original annual indices, cluster statistics, new proxy areas, and a historical-vs-new comparison.
+
+**Read before using:** The archived PDF omits the original vulnerability model's threshold logic. The reconstructed percentile-based vulnerability proxy is **not** a replication of the reported historical vulnerability percentages. The prior execution results were inspected, but this reorganized repository notebook still needs a fresh end-to-end Colab run. The original report, poster and PDF export remain unchanged.
+
 ## Related work
 
 - [Drought Event Analysis in South Punjab (2001–2025)](https://github.com/musab-shahid/south-punjab-drought-analysis) — multi-sensor drought-event and vegetation-response analysis.
