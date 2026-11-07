@@ -1,4 +1,6 @@
 # Multan Urban Heat Island & Surface-Temperature Analysis (2013–2023)
+**Reader guide:** [Project structure and report status](docs/PROJECT_GUIDE.md) · [Public portfolio](https://musab-shahid-earth-observation.brinycourt4.chatgpt.site/)
+
 
 **Landsat 8 · Google Earth Engine · Remote sensing · Spatial statistics · Exploratory clustering**
 
@@ -49,6 +51,8 @@ How do satellite-observed land-surface temperatures differ among built-up, veget
 **Tools:** Earth Engine, Python, Google Colab, geemap, pandas, NumPy, SciPy and Matplotlib.
 
 ## Research portfolio
+
+[Fourth project: Multan Environmental Heat Screening](https://github.com/musab-shahid/multan-environmental-heat-screening) adds source-ID mapping and temporal model evaluation.
 
 | Project | Focus | Research context |
 | --- | --- | --- |
