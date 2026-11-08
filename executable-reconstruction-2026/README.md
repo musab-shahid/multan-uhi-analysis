@@ -1,5 +1,5 @@
-# Executed reconstruction snapshot
+# Preserved Earth Engine execution snapshot
 
-This directory preserves a notebook with saved execution outputs. It is an audit artifact, not the default editing location.
+This notebook retains earlier execution outputs and valid source for the score calculation. The November 2026 comparison identified a parenthesis error in the separate clean notebook, now repaired there. The snapshot itself is preserved unchanged.
 
-Use [the clean notebook](../notebooks/Multan_UHI_Portfolio_Reconstructed.ipynb) and [run guide](../docs/REPRODUCING_RECONSTRUCTION.md) for a new run. The clean and executed notebooks have differences; saved outputs do not establish that every current clean cell has been independently rerun. Keep the original FYP report separate from the later proxy model.
+Use the canonical notebook for a new extraction, or notebooks/UHI_Results_From_Saved_Tables.ipynb for an executed offline presentation of the supplied tables. See docs/NOTEBOOK_RECONCILIATION.md for the cell comparison and verification limits.

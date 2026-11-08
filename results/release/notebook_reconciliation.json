@@ -1,0 +1,295 @@
+{
+  "clean_before": [
+    {
+      "cell_index": 1,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 2,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 4,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 6,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 7,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 9,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 11,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 13,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 15,
+      "execution_count": null,
+      "syntax_error": "SyntaxError: '(' was never closed (line 11)"
+    },
+    {
+      "cell_index": 16,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 18,
+      "execution_count": null,
+      "syntax_error": null
+    }
+  ],
+  "archived_snapshot": [
+    {
+      "cell_index": 1,
+      "execution_count": 1,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 2,
+      "execution_count": 2,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 4,
+      "execution_count": 3,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 6,
+      "execution_count": 4,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 7,
+      "execution_count": 5,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 9,
+      "execution_count": 6,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 11,
+      "execution_count": 7,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 13,
+      "execution_count": 8,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 15,
+      "execution_count": 10,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 16,
+      "execution_count": 11,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 18,
+      "execution_count": 12,
+      "syntax_error": null
+    }
+  ],
+  "source_differences": [
+    {
+      "cell_index": 15,
+      "diff": "--- clean\n+++ saved_snapshot\n@@ -10,7 +10,8 @@\n print(\"NEW threshold values:\", {k:p[k] for k in keys})\n score = (source.select(\"LST\").gte(float(p[\"LST_p75\"]))\n          .add(source.select(\"NDVI\").lte(float(p[\"NDVI_p25\"])))\n-score = score.add(source.select(\"NDBI\").gte(float(p[\"NDBI_p75\"])))\n+         .add(source.select(\"NDBI\").gte(float(p[\"NDBI_p75\"])))\n+)\n new_classes = (\n     score.eq(1).Or(score.eq(2)).multiply(1)\n     .add(score.eq(3).multiply(2))\n"
+    }
+  ],
+  "canonical_after": [
+    {
+      "cell_index": 1,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 2,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 4,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 6,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 7,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 9,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 11,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 13,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 15,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 16,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 18,
+      "execution_count": null,
+      "syntax_error": null
+    },
+    {
+      "cell_index": 20,
+      "execution_count": null,
+      "syntax_error": null
+    }
+  ],
+  "fresh_earth_engine_execution": false,
+  "researcher_supplied_original": {
+    "sha256": "18286ce6c54a9e7b011fc0cca1c4aab9fb3ce7213cdb5b3e86aa3300cafb47b2",
+    "cells": [
+      {
+        "cell_index": 1,
+        "execution_count": 1,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 2,
+        "execution_count": 2,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 3,
+        "execution_count": 3,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 5,
+        "execution_count": 4,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 6,
+        "execution_count": 5,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 8,
+        "execution_count": 6,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 10,
+        "execution_count": 7,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 11,
+        "execution_count": 8,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 13,
+        "execution_count": 9,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 14,
+        "execution_count": 10,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 16,
+        "execution_count": 11,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 18,
+        "execution_count": 12,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 19,
+        "execution_count": 13,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 20,
+        "execution_count": 14,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 22,
+        "execution_count": 15,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 23,
+        "execution_count": 16,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 24,
+        "execution_count": 17,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 26,
+        "execution_count": 18,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 28,
+        "execution_count": 19,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 29,
+        "execution_count": 20,
+        "syntax_error": null
+      },
+      {
+        "cell_index": 31,
+        "execution_count": 21,
+        "syntax_error": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "path": "data/reconstructed/annual_index_summary.csv",
+    "sha256": "6b0a840023042798b498e1e5ae0795d61811b4e0b75e3e9d95b45d98b43bc780",
+    "bytes": 1225
+  },
+  {
+    "path": "data/reconstructed/historical_vs_new_comparison.csv",
+    "sha256": "4257a6fcd5250e8c9e7927fbc5d402f10b25c38e2b4af80ca3100f59c960f96d",
+    "bytes": 254
+  },
+  {
+    "path": "data/reconstructed/kmeans_2023_cluster_summary.csv",
+    "sha256": "07dbeccd149796a93199c71a31637fd76631da93fbe8c7a03f109b52eb808c55",
+    "bytes": 595
+  },
+  {
+    "path": "data/reconstructed/new_vulnerability_2023_areas.csv",
+    "sha256": "5e120f275ebdcc6ec80b839587dece90098cce043a517ce26686d0c22320bede",
+    "bytes": 194
+  }
+]

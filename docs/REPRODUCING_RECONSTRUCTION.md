@@ -1,11 +1,21 @@
-# Reproducing the reconstructed UHI analysis
+# Running the UHI project
 
-1. Open [the reconstructed Python notebook](../notebooks/Multan_UHI_Portfolio_Reconstructed.ipynb) in **Google Colab**.
-2. Sign in to an account authorized to use Google Earth Engine. Set `PROJECT_ID` in the first Python cell to a Cloud project your account may use. The original study's ID is `fyp-multan-spatiotemp-analysis`; it is **not a secret**.
-3. Run the install and initialization cells; complete Earth Engine authorization if prompted.
-4. Leave `SHOW_INTERACTIVE_MAPS = False` unless browser tile access works. Maps are optional; data calculations do not require OpenStreetMap.
-5. Execute sequentially. The notebook writes CSVs into `/content/multan_uhi_reconstructed_outputs`. **Download them** because Colab runtime files are temporary.
-6. Compare the annual summaries with [published derived CSV](../data/reconstructed/annual_index_summary.csv) and the cluster summaries with [2023 cluster CSV](../data/reconstructed/kmeans_2023_cluster_summary.csv). Note that Earth Engine data availability and unsupervised cluster ID ordering may vary.
-7. Treat [the new vulnerability proxy](../data/reconstructed/new_vulnerability_2023_areas.csv) and [historical comparison](../data/reconstructed/historical_vs_new_comparison.csv) strictly as a **new method**, not a reproduction of missing original code.
+## Rebuild the published results without an account
 
-**Warnings:** Data source: Landsat 8 C2 L2; yearly source filters use a **September 30 exclusive end date**, cloud metadata <10%, QA band masking, reflectance/temperature scaling. The clustering features are *not standardized* and original cluster semantic labels have no independently validated ground truth. The annual results were verified from a *prior* executed notebook; this reorganized notebook has **not yet passed a fresh end-to-end execution**.
+From the repository root, use Python 3.12:
+
+```sh
+pip install -r requirements-results.txt
+python src/prepare_results.py
+python -m unittest discover -s tests -v
+```
+
+Or open [the executed offline notebook](../notebooks/UHI_Results_From_Saved_Tables.ipynb) in a local Jupyter environment. It reads the four preserved tables in data/reconstructed, checks them, and generates results/release and docs/RESEARCH_RESULTS.md. This path does not download or recompute Landsat imagery.
+
+## Re-extract from Earth Engine
+
+Open [the canonical Earth Engine notebook](../notebooks/Multan_UHI_Portfolio_Reconstructed.ipynb) in Colab. Install its listed packages, set PROJECT_ID to an authorized Earth Engine Cloud project, authenticate and run sequentially. Maps are disabled by default. Download the generated CSVs, regression samples and run_metadata.json before the temporary runtime resets. Source now passes parsing, but this edited version has not been freshly executed on Earth Engine.
+
+The exact source period is May 1 to September 30 exclusive. The scene cloud metadata threshold is below 10%; QA masking and historical normalizedDifference behavior are preserved. No feature standardization was added. Cluster groups are descriptive, not land-cover classes. The later percentile proxy remains separate from the original FYP vulnerability method.
+
+See [the reconciliation record](NOTEBOOK_RECONCILIATION.md) for the repaired source difference and exact verification scope. The archived snapshot and original FYP documents remain unchanged.

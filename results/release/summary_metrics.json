@@ -1,0 +1,10 @@
+{
+  "mean_lst_2013_c": 40.058257490954496,
+  "mean_lst_2023_c": 40.66628606505307,
+  "difference_of_regional_means_c": 0.6080285740985758,
+  "coolest_selected_year": 2021,
+  "warmest_selected_year": 2015,
+  "cluster_mean_range_c": 8.995580110031447,
+  "classified_area_km2": 1937.9020558440495,
+  "proxy_valid_area_km2": 1937.9020558224356
+}

@@ -1,0 +1,39 @@
+# Multan surface-temperature patterns
+
+Research results brief | November 2026
+
+## Study and contribution
+
+Musab Shahid’s undergraduate environmental-science project at Bahauddin Zakariya University examines Landsat surface-temperature patterns within 25 km of central Multan. This brief presents the supplied reconstructed numerical results, with neutral descriptions of exploratory clusters. The original FYP report remains the full historical research document.
+
+## Findings
+
+The selected warm-season mean LST ranged from 39.60 C in 2021 to 41.79 C in 2015. The 2013 and 2023 means were 40.06 C and 40.67 C. Their difference, 0.61 C, is descriptive: it is not a warming rate, a paired-pixel change estimate, or an urban-rural heat-island intensity.
+
+![Seasonal surface temperatures](../results/release/seasonal_surface_temperature.png)
+
+## Methods
+
+Landsat 8 Collection 2 Tier 1 Level 2 imagery was filtered to the 25-km circle centered at 71.4753 E, 30.1575 N. Selected years are 2013, 2015, 2017, 2018, 2019, 2021 and 2023. The source filter runs from May 1 to September 30 exclusive (through September 29), with scene cloud cover below 10%. Quality masks exclude flagged pixels; surface reflectance and surface temperature are scaled before calculating NDVI, NDBI and MNDWI. Each selected year uses a median composite. Mean and spatial standard deviation summarize the available pixels; standard deviation is spatial variability, not uncertainty in the mean.
+
+## Exploratory groups
+
+Four-cluster K-Means uses LST, NDVI, NDBI and MNDWI on the 2023 composite. The input features were not standardized. The retained cluster summaries cover 1937.90 km2 of classified pixels. Group means range from 36.18 to 45.18 C, a 9.00 C contrast. Groups G1-G4 are ordered by mean LST only; they are not validated land-cover classes. This contrast is also not an independently estimated urban heat-island intensity.
+
+![Neutral cluster profiles](../results/release/cluster_profiles.png)
+
+The coolest group has positive mean MNDWI and low NDVI. Group G2 has the highest NDVI. Group G4 is hottest and has the least-negative NDBI. These spectral patterns support exploratory interpretation, but cannot by themselves establish water, vegetation, barren or urban class accuracy. The old names remain in historical tables; the current figures avoid assigning land-cover names from numeric cluster IDs.
+
+## The later surface proxy
+
+A separate 2026 extension uses high LST (75th percentile), low NDVI (25th percentile) and high NDBI (75th percentile). Its saved shares are 62.97%, 21.72% and 15.32% for scores 0, 1-2 and 3, respectively. The source called these Low, Moderate and Extreme. They describe a relative surface-index rule, not population vulnerability or health risk. The original FYP vulnerability formula is not recoverable from the archived code, so these later percentages must not be presented as a reconstruction of that formula.
+
+## Scope and reproducibility
+
+The published four CSVs pass schema, finite-value, area-denominator and comparison-arithmetic checks. The offline results notebook executes without Earth Engine or account access. These checks reproduce the presentation from saved tables, not a fresh extraction from Landsat. The canonical Earth Engine notebook has been reconciled and syntax checked; the saved execution snapshot remains an archive. Input hashes, execution details and source differences are supporting methods in the repository.
+
+LST measures surface temperature rather than air temperature. Cloud selection, per-band masks, uneven acquisition dates, mixed pixels and unstandardized clustering limit interpretation. No land-cover accuracy, health-risk, long-term trend or urban-rural UHI-intensity claim is made from these summaries.
+
+## Materials and credits
+
+Original study: Musab Shahid, Bahauddin Zakariya University. Data: USGS Landsat 8 Collection 2 Level 2, processed in Google Earth Engine. November 2026 code review, offline verification and presentation preparation used AI assistance. See the original report for its research narrative; use these current figures with the scope above.

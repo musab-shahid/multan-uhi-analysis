@@ -1,65 +1,45 @@
-# Multan Urban Heat Island & Surface-Temperature Analysis (2013–2023)
-**Reader guide:** [Project structure and report status](docs/PROJECT_GUIDE.md) · [Public portfolio](https://musab-shahid-earth-observation.brinycourt4.chatgpt.site/)
+# Multan surface-temperature patterns, 2013-2023
 
+**Landsat 8 · Earth Engine · Spectral indices · Exploratory clustering**
 
-**Landsat 8 · Google Earth Engine · Remote sensing · Spatial statistics · Exploratory clustering**
+Musab Shahid's undergraduate environmental-science research at Bahauddin Zakariya University examines selected warm-season land-surface temperatures within 25 km of Multan.
 
-Undergraduate environmental-science research examining surface-temperature differences across Multan and surrounding peri-urban land cover.
+## Explore the research
 
-**Researcher:** Musab Shahid  
-**Institution:** Bahauddin Zakariya University, Multan, Pakistan  
-**Study area:** 25-km radius around Multan  
-**Time frame:** Selected warm-season observations from 2013, 2015, 2017, 2018, 2019, 2021 and 2023
+- **[Full FYP report](FYP_Multan_UHI_Report.pdf)** · [Original poster](fyp-canva-poster.png)
+- **[Current results brief](docs/RESEARCH_RESULTS.pdf)** · [Readable results](docs/RESEARCH_RESULTS.md)
+- [Figures and tables](results/release/) · [Public case study](https://musab-shahid-earth-observation.brinycourt4.chatgpt.site/projects/multan-uhi-analysis)
 
-> **Interpretation:** Satellite land-surface temperature (LST) is **not** air temperature or direct human heat exposure. Historical land-cover labels and the newer vulnerability proxy are not independently validated.
+## Main findings
 
-## Explore the project
+Selected seasonal mean LST ranges from **39.60 C (2021)** to **41.79 C (2015)**. The 2013 and 2023 means are **40.06 C** and **40.67 C**. Their **0.61 C difference** is a comparison of two regional composite means, not a warming rate or an urban-rural heat-island intensity.
 
-| Start here | What it contains |
-| --- | --- |
-| [Original FYP research report](FYP_Multan_UHI_Report.pdf) | Historical research narrative, methodology and results |
-| [Research poster](fyp-canva-poster.png) | One-page visual introduction |
-| [Reconstructed executable Colab notebook](notebooks/Multan_UHI_Portfolio_Reconstructed.ipynb) | Landsat processing, index summaries, regressions and 2023 clustering |
-| [How to run the notebook](docs/REPRODUCING_RECONSTRUCTION.md) | GEE project access, dependencies and run order |
-| [Derived numerical outputs](data/reconstructed/) | Annual statistics, cluster summaries and **new** vulnerability-proxy tables |
-| [Execution verification and caveats](docs/RECONSTRUCTED_EXECUTION_VERIFICATION.md) | Evidence from a previous notebook run, with interpretation limits |
-| [Historical code export (PDF)](fyp.ipynb%20-%20Colab%20Code.pdf) | Original archival source used in reconstruction; not executable |
+![Selected seasonal surface temperatures](results/release/seasonal_surface_temperature.png)
 
-![Original Multan surface-temperature research poster](fyp-canva-poster.png)
+The 2023 exploratory clusters span **36.18-45.18 C** in mean LST. Current figures use neutral temperature-ranked groups rather than treating numeric IDs as validated land-cover classes.
 
-## Research questions
+![Exploratory cluster profiles](results/release/cluster_profiles.png)
 
-How do satellite-observed land-surface temperatures differ among built-up, vegetated, barren and water-related surfaces? How do LST and spectral indices vary across the selected warm-season years, and what relationships emerge between vegetation and surface temperature?
+## Method and interpretation
 
-## Data and analytical approach
+The study uses May 1-September 29 Landsat 8 Collection 2 Level 2 observations in seven selected years, scene cloud cover below 10%, pixel quality masking, scaled surface reflectance and temperature, and median composites. NDVI, NDBI and MNDWI describe spectral characteristics. K-Means groups use four unstandardized features.
 
-1. **Acquire and preprocess** Landsat 8 Collection 2 Level 2 imagery in Google Earth Engine, applying quality masks and published surface-temperature/reflectance scaling.
-2. **Measure surface characteristics** with LST, NDVI (vegetation), NDBI (built-up signal) and MNDWI (water-related signal).
-3. **Compare years and associations** through regional summaries and descriptive NDVI–LST regression.
-4. **Explore 2023 spatial groupings** using four-cluster K-Means on LST and spectral-index features.
+LST measures surface temperature, not air temperature or human exposure. The later percentile-based surface proxy is explicitly separate from the original FYP vulnerability calculation; its classes are not independently validated health-risk categories. The original report and poster are retained as historical research documents.
 
-**Selected historical annual mean LST values:** 2013 **40.06°C**, 2015 **41.79°C**, 2017 **41.73°C**, 2018 **41.28°C**, 2019 **41.28°C**, 2021 **39.60°C**, and 2023 **40.67°C**. These are means of the selected seasonal satellite composites, **not** continuous annual air-temperature measurements.
+## Run and inspect
 
-## Reproduction status and boundaries
+[Executed offline notebook](notebooks/UHI_Results_From_Saved_Tables.ipynb) · [Earth Engine source notebook](notebooks/Multan_UHI_Portfolio_Reconstructed.ipynb) · [Run guide](docs/REPRODUCING_RECONSTRUCTION.md)
 
-- A preceding Colab reconstruction ran successfully and generated the four [published CSV outputs](data/reconstructed/); the organized repository notebook was subsequently reported to run in Colab. A separate, documented independent rerun is not claimed.
-- The archival code PDF does **not** contain the original vulnerability-classification formula, thresholds or complete variables. The 2026 percentile-based **relative surface vulnerability proxy** is a **new model**, not a reproduction of the historical FYP's low/moderate/extreme area percentages.
-- K-Means clusters are **unsupervised** and the historical labels (water, vegetation, barren, urban) were not validated against independent reference observations. Original features were not standardized.
-- Seasonal compositing, cloud masking, mixed pixels and observation timing limit comparisons. External background-map tiles can fail without affecting Earth Engine calculations.
-- The original report and poster are preserved unchanged.
+```sh
+pip install -r requirements-results.txt
+python src/prepare_results.py
+python -m unittest discover -s tests -v
+```
 
-**Tools:** Earth Engine, Python, Google Colab, geemap, pandas, NumPy, SciPy and Matplotlib.
+The offline pipeline validates the four supplied CSVs and rebuilds the results. Four focused tests cover ID permutation, area denominators and invalid cluster data. Source syntax is checked and the offline notebook is executed; a fresh Earth Engine extraction is not claimed. [Supporting verification](docs/NOTEBOOK_RECONCILIATION.md) includes the repaired clean-notebook syntax error, input hashes and environment.
 
-## Research portfolio
+## Archive and credit
 
-[Fourth project: Multan Environmental Heat Screening](https://github.com/musab-shahid/multan-environmental-heat-screening) adds source-ID mapping and temporal model evaluation.
+[Reader guide](docs/PROJECT_GUIDE.md) · [Historical source tables](data/reconstructed/) · [Preserved execution snapshot](executable-reconstruction-2026/) · [Original code PDF](fyp.ipynb%20-%20Colab%20Code.pdf)
 
-| Project | Focus | Research context |
-| --- | --- | --- |
-| **This project — Urban heat** | Landsat LST, spectral indices, exploratory spatial grouping | Undergraduate final-year research |
-| [ERA5 Monsoon Analysis](https://github.com/musab-shahid/multan-era5-monsoon-analysis) | Atmospheric reanalysis, seasonal rainfall, trend inference | **Collaborative**, four contributors |
-| [South Punjab Drought Analysis](https://github.com/musab-shahid/south-punjab-drought-analysis) | Multi-sensor drought events and environmental responses | **Independent** research-application report |
-
-## Attribution and license
-
-Researcher: **Musab Shahid**. See [LICENSE](LICENSE) for repository licensing; source publications, graphics and external imagery/data may have different usage rights. A [draft profile README](docs/GITHUB_PROFILE_README_DRAFT.md) is retained separately for potential GitHub profile publication.
+Researcher: Musab Shahid. Data: USGS Landsat 8, processed in Google Earth Engine. November 2026 code review, results verification and presentation preparation used AI assistance. The existing LICENSE applies where appropriate; original and third-party materials retain their respective rights.
