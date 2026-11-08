@@ -1,10 +1,10 @@
 [
   {
-    "title": "Multan surface-temperature patterns",
+    "title": "Spatiotemporal Analysis of Urban Heat Island Effect in Multan, Pakistan (2013–2023)",
     "sections": [
       [
         "Study and contribution",
-        "Musab Shahid\u2019s undergraduate environmental-science project at Bahauddin Zakariya University examines Landsat surface-temperature patterns within 25 km of central Multan. This brief presents the supplied reconstructed numerical results, with neutral descriptions of exploratory clusters. The original FYP report remains the full historical research document."
+        "Musab Shahid’s undergraduate environmental-science project at Bahauddin Zakariya University examines Landsat surface-temperature patterns within 25 km of central Multan. This brief presents the supplied reconstructed numerical results, with neutral descriptions of exploratory clusters. The original FYP report remains the full historical research document."
       ],
       [
         "Findings",
@@ -15,7 +15,8 @@
         "Landsat 8 Collection 2 Tier 1 Level 2 imagery was filtered to the 25-km circle centered at 71.4753 E, 30.1575 N. Selected years are 2013, 2015, 2017, 2018, 2019, 2021 and 2023. The source filter runs from May 1 to September 30 exclusive (through September 29), with scene cloud cover below 10%. Quality masks exclude flagged pixels; surface reflectance and surface temperature are scaled before calculating NDVI, NDBI and MNDWI. Each selected year uses a median composite. Mean and spatial standard deviation summarize the available pixels; standard deviation is spatial variability, not uncertainty in the mean."
       ]
     ],
-    "figure": "seasonal_surface_temperature.png"
+    "figure": "seasonal_surface_temperature.png",
+    "subtitle": "Using Google Earth Engine, Machine Learning, Landsat 8 C2 L2 Imagery, and Remote Sensing Spectral Indices"
   },
   {
     "title": "Exploratory spatial groups",

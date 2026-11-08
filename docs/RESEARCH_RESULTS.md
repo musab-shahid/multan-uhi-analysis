@@ -1,4 +1,6 @@
-# Multan surface-temperature patterns
+# Spatiotemporal Analysis of Urban Heat Island Effect in Multan, Pakistan (2013–2023)
+
+*Using Google Earth Engine, Machine Learning, Landsat 8 C2 L2 Imagery, and Remote Sensing Spectral Indices*
 
 Research results brief | November 2026
 

@@ -1,4 +1,4 @@
-# Multan surface-temperature research: reader guide
+# Spatiotemporal Analysis of Urban Heat Island Effect in Multan, Pakistan (2013–2023): reader guide
 
 1. Read [the original FYP report](../FYP_Multan_UHI_Report.pdf) for the full research narrative.
 2. Use [the current results brief](RESEARCH_RESULTS.pdf) and [readable version](RESEARCH_RESULTS.md) for the checked numerical presentation and neutral cluster profiles.

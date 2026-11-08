@@ -10,9 +10,9 @@ I work on applied environmental research using satellite observations, atmospher
 
 | Project | Methods and evidence | Repository |
 | --- | --- | --- |
-| South Punjab drought events (2001–2025) | CHIRPS, ERA5-Land, MODIS, drought-event runs, lag associations, exploratory wheat-yield models | [Research and limitations](https://github.com/musab-shahid/south-punjab-drought-analysis) |
-| Multan monsoon variability (2016–2025) | ERA5, precipitation and temperature analysis, time-zone reconciliation; **collaborative work with four credited contributors** | [Collaborative research](https://github.com/musab-shahid/multan-era5-monsoon-analysis) |
-| Multan urban heat (2013–2023) | Landsat 8, Google Earth Engine, LST, NDVI/NDBI/MNDWI, K-Means | [Undergraduate research](https://github.com/musab-shahid/multan-uhi-analysis) |
+| Drought Event Analysis in South Punjab, Pakistan (2001–2025) | CHIRPS, ERA5-Land, MODIS, drought-event runs, lag associations, exploratory wheat-yield models | [Research and limitations](https://github.com/musab-shahid/south-punjab-drought-analysis) |
+| Monsoon Rainfall & Flood-Risk Analysis for Multan (2016–2025) | ERA5, precipitation and temperature analysis, time-zone reconciliation; **collaborative work with four credited contributors** | [Collaborative research](https://github.com/musab-shahid/multan-era5-monsoon-analysis) |
+| Spatiotemporal Analysis of Urban Heat Island Effect in Multan, Pakistan (2013–2023) (2013–2023) | Landsat 8, Google Earth Engine, LST, NDVI/NDBI/MNDWI, K-Means | [Undergraduate research](https://github.com/musab-shahid/multan-uhi-analysis) |
 
 ## Methods and tools
 
